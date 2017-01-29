@@ -31,6 +31,24 @@ class PlayersViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
+    }
+    
+    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
+        
+        if let playerDetailsViewController = segue.source as? PlayerDetailsViewController {
+            if let player = playerDetailsViewController.player {
+                players.append(player)
+                
+                //tableView.reloadData()
+                let indexPath = IndexPath(row: players.count - 1, section: 0)
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
+        
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

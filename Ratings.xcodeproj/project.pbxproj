@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAA8FFEB1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */; };
 		BAC209CD1E361F4300B0BEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC209CC1E361F4300B0BEB4 /* AppDelegate.swift */; };
 		BAC209D21E361F4300B0BEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC209D01E361F4300B0BEB4 /* Main.storyboard */; };
 		BAC209D41E361F4300B0BEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC209D31E361F4300B0BEB4 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		BAC209C91E361F4300B0BEB4 /* Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC209CC1E361F4300B0BEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC209D11E361F4300B0BEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				BAC209DE1E38C20E00B0BEB4 /* PlayersViewController.swift */,
 				BAC209E21E38CE2500B0BEB4 /* PlayerCell.swift */,
 				BAC209D01E361F4300B0BEB4 /* Main.storyboard */,
+				BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */,
 				BAC209E01E38C26800B0BEB4 /* Player.swift */,
 				BAC209D31E361F4300B0BEB4 /* Assets.xcassets */,
 				BAC209D51E361F4300B0BEB4 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				BAC209CD1E361F4300B0BEB4 /* AppDelegate.swift in Sources */,
 				BAC209DF1E38C20E00B0BEB4 /* PlayersViewController.swift in Sources */,
 				BAC209E31E38CE2500B0BEB4 /* PlayerCell.swift in Sources */,
+				BAA8FFEB1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +309,7 @@
 				BAC209DD1E361F4300B0BEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
