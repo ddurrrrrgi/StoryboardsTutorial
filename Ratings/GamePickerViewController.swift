@@ -1,22 +1,32 @@
 //
-//  PlayersViewController.swift
+//  GamePickerViewController.swift
 //  Ratings
 //
-//  Created by RGP_KOREA on 2017. 1. 25..
+//  Created by RGP_KOREA on 2017. 2. 1..
 //  Copyright © 2017년 DDRG. All rights reserved.
 //
 
 import UIKit
 
-let playersData = [
-    Player(name: "Bill Evans", game:"Tic-Tac-Toe", rating: 4),
-    Player(name: "Oscar Peterson", game: "Spin the Bottle", rating: 5),
-    Player(name: "Dave Brubeck", game: "Texas Hold 'em Poker", rating: 2)
-]
-
-class PlayersViewController: UITableViewController {
-    var players:[Player] = playersData 
+class GamePickerViewController: UITableViewController {
     
+    let games = [
+        "Angry Birds",
+        "Chess",
+        "Russian Roulette",
+        "Spin the Bottle",
+        "Texas Hold'em Poker",
+        "Tic-Tac-Toe"]
+    
+    var selectedGame:String? {
+        didSet {
+            if let game = selectedGame {
+                selectedGameIndex = games.index(of:game)!
+            }
+        }
+    }
+    var selectedGameIndex:Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,42 +42,63 @@ class PlayersViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
-    }
-    
-    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
-        
-        if let playerDetailsViewController = segue.source as? PlayerDetailsViewController {
-            if let player = playerDetailsViewController.player {
-                players.append(player)
-                
-                //tableView.reloadData()
-                let indexPath = IndexPath(row: players.count - 1, section: 0)
-                tableView.insertRows(at: [indexPath], with: .automatic)
-            }
-        }
-        
-    }
-    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        // #warning Incomplete implementation, return the number of rows
+        return games.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
-
-        //let player = players[indexPath.row] as Player
-        let player = players[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
+        cell.textLabel?.text = games[indexPath.row]
         
-        /*cell.textLabel?.text = player.name
-        cell.detailTextLabel?.text = player.game*/
-        cell.player = player
+        if indexPath.row == selectedGameIndex {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         
         return cell
     }
- 
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //Other row is selected - need to deselect it
+        if let index = selectedGameIndex {
+            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
+            cell?.accessoryType = .none
+        }
+        
+        selectedGame = games[indexPath.row]
+        
+        //update the checkmark for the current row
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SaveSelectedGame" {
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPath(for: cell)
+                if let index = indexPath?.row {
+                    selectedGame = games[index]
+                }
+            }
+        }
+    }
+    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

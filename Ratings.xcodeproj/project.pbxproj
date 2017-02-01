@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7FE5921E41FD7400308983 /* GamePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FE5911E41FD7400308983 /* GamePickerViewController.swift */; };
 		BAA8FFEB1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */; };
 		BAC209CD1E361F4300B0BEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC209CC1E361F4300B0BEB4 /* AppDelegate.swift */; };
 		BAC209D21E361F4300B0BEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC209D01E361F4300B0BEB4 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA7FE5911E41FD7400308983 /* GamePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePickerViewController.swift; sourceTree = "<group>"; };
 		BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		BAC209C91E361F4300B0BEB4 /* Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC209CC1E361F4300B0BEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				BAC209CC1E361F4300B0BEB4 /* AppDelegate.swift */,
 				BAC209DE1E38C20E00B0BEB4 /* PlayersViewController.swift */,
+				BA7FE5911E41FD7400308983 /* GamePickerViewController.swift */,
 				BAC209E21E38CE2500B0BEB4 /* PlayerCell.swift */,
 				BAC209D01E361F4300B0BEB4 /* Main.storyboard */,
 				BAA8FFEA1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift */,
@@ -147,6 +150,7 @@
 			files = (
 				BAC209E11E38C26800B0BEB4 /* Player.swift in Sources */,
 				BAC209CD1E361F4300B0BEB4 /* AppDelegate.swift in Sources */,
+				BA7FE5921E41FD7400308983 /* GamePickerViewController.swift in Sources */,
 				BAC209DF1E38C20E00B0BEB4 /* PlayersViewController.swift in Sources */,
 				BAC209E31E38CE2500B0BEB4 /* PlayerCell.swift in Sources */,
 				BAA8FFEB1E3D9F2100C3ACD5 /* PlayerDetailsViewController.swift in Sources */,
